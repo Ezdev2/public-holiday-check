@@ -11,18 +11,22 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Updated to v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3  # Updated to v3
       with:
         node-version: '14'
 
     - name: Fetch Public Holidays Data for Madagascar
       run: |
-        # Get the current year dynamically using GitHub Actions' env
-        YEAR=$(date +%Y)
-        curl -o public_holidays.json "https://date.nager.at/api/v3/publicholidays/${YEAR}/MG"
+        curl -o public_holidays.json https://date.nager.at/api/v3/publicholidays/$(date +%Y)/MG
+
+    - name: Check if the file exists
+      run: ls -l public_holidays.json  # Debug step to check if the file is downloaded
+
+    - name: Set up GitHub token for authentication
+      run: git config --global user.token "${{ secrets.GITHUB_TOKEN }}"
 
     - name: Commit and push the changes
       run: |
