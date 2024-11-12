@@ -4,7 +4,7 @@ Welcome to the **Public Holidays Tracker**, a sleek and simple web application d
 
 ![Holiday Tracker Preview](./assets/screenshot.png)
 
-### 🚀 **[View the live demo on Netlify](https://your-netlify-link.netlify.app)**
+### 🚀 **[View the live demo on Netlify](https://public-holiday-check.netlify.app/)**
 ---
 
 ## **Features**
@@ -111,4 +111,4 @@ This project was created by **Ezra Fanomezantsoa** (@Ezdev2).
 
 ---
 
-### 🚀 **[View the live demo on Netlify](https://your-netlify-link.netlify.app)**
+### 🚀 **[View the live demo on Netlify](https://public-holiday-check.netlify.app/)**
