@@ -37,4 +37,4 @@ jobs:
         git config --global user.email "fansoaezra@gmail.com"
         git add public_holidays.json
         git commit -m "Update public holidays data for Madagascar" || echo "No changes to commit"
-        git push
+        it push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Ezdev2/public-holiday-check.git
