@@ -1,0 +1,213 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.holiday-container {
+    width: 80%;
+    margin: 50px auto;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #fff;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* Title and flag container */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Title and Flag Styling */
+#countryFlag {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+#appTitle {
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+
+#countryFlag, #appTitle {
+    margin-right: 15px;
+}
+
+/* Country Code and Year Inputs */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Container for the country code input and datalist */
+.country-code-container {
+    position: relative;
+    width: 45%;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #222;
+}
+
+tr:hover {
+    background-color: #444;
+}
+
+/* Language Selector */
+#languageSelector {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#languageSelector:hover {
+    background-color: #444;
+}
+
+.language-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Translate SVG Icon next to the dropdown */
+#languageSelector + img {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#languageSelector + svg:hover {
+    transform: scale(1.2);
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .holiday-container {
+        width: 95%;
+    }
+
+    .input-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  

@@ -1,0 +1,33 @@
+name: Update Public Holidays Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  update_holidays:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Fetch Public Holidays Data for Madagascar
+      run: |
+        # Get the current year dynamically using GitHub Actions' env
+        YEAR=$(date +%Y)
+        curl -o public_holidays.json "https://date.nager.at/api/v3/publicholidays/${YEAR}/MG"
+
+    - name: Commit and push the changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add public_holidays.json
+        git commit -m "Update public holidays data for Madagascar" || echo "No changes to commit"
+        git push

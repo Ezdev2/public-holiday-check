@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Holidays Tracker</title>
+
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div class="holiday-container">
+        <div class="title">
+            <h2>
+                <!-- Country Flag and Title -->
+                <img id="countryFlag" class="flag" src="" alt="Flag">
+                <span id="appTitle">Public Holidays Tracker</span>
+            </h2>
+    
+             <!-- Language Toggle -->
+             <div class="language-container">
+                <img src="./assets/translate.svg" alt="">
+                <select id="languageSelector" onchange="changeLanguage()">
+                    <option value="en">EN</option>
+                    <option value="fr">FR</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Input section for country and year -->
+        <div class="input-container">
+            <input id="countryCode" type="text" placeholder="Enter country code (e.g., MG)" list="countryList" />
+            <datalist id="countryList">
+            </datalist>
+            <input id="year" type="number" placeholder="Enter year (e.g., 2024)" />
+            <button onclick="fetchHolidays()">Fetch Holidays</button>
+        </div>
+
+        <!-- Table displaying holidays -->
+        <table id="holidaysTable">
+            <thead>
+                <tr>
+                    <th id="dateHeader">Date</th>
+                    <th id="holidayNameHeader">Holiday Name</th>
+                    <th id="localNameHeader">Local Name</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
