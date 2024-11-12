@@ -9,24 +9,21 @@ jobs:
   update_holidays:
     runs-on: ubuntu-latest
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true  # Forces Node20 for testing
+
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Updated to v3
+      uses: actions/checkout@v3  # Use the latest version (v3) instead of v2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3  # Updated to v3
+      uses: actions/setup-node@v3  # Use the latest version of setup-node
       with:
-        node-version: '14'
+        node-version: '20'  # Make sure it's using Node20
 
     - name: Fetch Public Holidays Data for Madagascar
       run: |
         curl -o public_holidays.json https://date.nager.at/api/v3/publicholidays/$(date +%Y)/MG
-
-    - name: Check if the file exists
-      run: ls -l public_holidays.json  # Debug step to check if the file is downloaded
-
-    - name: Set up GitHub token for authentication
-      run: git config --global user.token "${{ secrets.GITHUB_TOKEN }}"
 
     - name: Commit and push the changes
       run: |
